@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Services;
+
+use App\Interfaces\ReviewRepositoryInterface;
+
+class ReviewService
+{
+    protected $reviewRepository;
+
+    public function __construct(ReviewRepositoryInterface $reviewRepository)
+    {
+        $this->reviewRepository = $reviewRepository;
+    }
+
+    public function getAll()
+    {
+        return $this->reviewRepository->getAllReviews();
+    }
+
+    public function getById($id)
+    {
+        return $this->reviewRepository->getReviewById($id);
+    }
+
+    public function create(array $data)
+    {
+        return $this->reviewRepository->createReview($data);
+    }
+
+    public function update($id, array $data)
+    {
+        return $this->reviewRepository->updateReview($id, $data);
+    }
+
+    public function delete($id)
+    {
+        return $this->reviewRepository->deleteReview($id);
+    }
+}
