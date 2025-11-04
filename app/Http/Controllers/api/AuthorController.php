@@ -28,6 +28,7 @@ class AuthorController extends Controller
 
     public function store(Request $request)
     {
+        
         $data = $request->only([
             'title',
             'description',
