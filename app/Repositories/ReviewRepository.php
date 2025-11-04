@@ -9,7 +9,6 @@ class ReviewRepository implements ReviewRepositoryInterface
 {
     public function getAllReviews()
     {
-        
         return Review::all();
     }
 
