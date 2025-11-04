@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Author
          $this->app->bind(AuthorRepositoryInterface::class, AuthorRepository::class);
+         
         // Book
          $this->app->bind(BookRepositoryInterface::class, BookRepository::class);
     }
