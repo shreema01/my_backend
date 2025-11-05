@@ -6,6 +6,7 @@ use App\Interfaces\ReviewRepositoryInterface;
 
 class ReviewService
 {
+    
     protected $reviewRepository;
 
     public function __construct(ReviewRepositoryInterface $reviewRepository)
