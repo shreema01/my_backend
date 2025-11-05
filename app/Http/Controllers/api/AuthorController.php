@@ -26,36 +26,42 @@ class AuthorController extends Controller
         return response()->json($author);
     }
 
-    public function store(Request $request)
-    {
-        
-        $data = $request->only([
-            'title',
-            'description',
-            'story',
-            'writing_philosophy',
-            'award_and_recognition',
-            'social_links',
-            'cover_image',
-        ]);
+  public function store(Request $request)
+{
+  
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string|max:255',
+        'story' => 'required|string',
+        'writing_philosophy' => 'nullable|array', 
+        'award_and_recognition' => 'nullable|array', 
+        'social_links' => 'nullable|array',
+        'cover_image' => 'nullable|string|max:255', 
+    ]);
 
-        $author = $this->authorService->addAuthor($data);
-        return response()->json(['message' => 'Author created successfully', 'author' => $author], 201);
-    }
+
+    $author = $this->authorService->addAuthor($validatedData);
+
+    return response()->json([
+        'message' => 'Author created successfully',
+        'author' => $author
+    ], 201);
+}
+
 
     public function update(Request $request, $id)
     {
-        $data = $request->only([
-            'title',
-            'description',
-            'story',
-            'writing_philosophy',
-            'award_and_recognition',
-            'social_links',
-            'cover_image',
+        $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string|max:255',
+        'story' => 'required|string',
+        'writing_philosophy' => 'nullable|array', 
+        'award_and_recognition' => 'nullable|array', 
+        'social_links' => 'nullable|array',
+        'cover_image' => 'nullable|string|max:255', 
         ]);
 
-        $author = $this->authorService->updateAuthor($id, $data);
+        $author = $this->authorService->updateAuthor($id, $validatedData);
         return response()->json(['message' => 'Author updated successfully', 'author' => $author]);
     }
 

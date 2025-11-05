@@ -25,37 +25,43 @@ class BookController extends Controller
         return response()->json($book);
     }
 
-    public function store(Request $request)
-    {
-        $data = $request->only([
-            'title',
-            'description',
-            'price',
-            'rating',
-            'genre',
-            'readers_love',
-            'sample_chapter',
-            'cover_image',
-        ]);
 
-        $book = $this->bookService->addBook($data);
-        return response()->json(['message' => 'Book created successfully', 'book' => $book], 201);
-    }
+    public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string|max:255',
+        'price' => 'required|string|max:255',
+        'rating' => 'required|string|max:255',
+        'genre' => 'nullable|array', 
+        'readers_love' => 'nullable|array', 
+        'sample_chapter' => 'required|string', 
+        'cover_image' => 'nullable|string|max:255', 
+    ]);
+
+ 
+    $book = $this->bookService->addBook($validatedData);
+
+    return response()->json([
+        'message' => 'Book created successfully',
+        'book' => $book
+    ], 201);
+}
 
     public function update(Request $request, $id)
     {
-        $data = $request->only([
-            'title',
-            'description',
-            'price',
-            'rating',
-            'genre',
-            'readers_love',
-            'sample_chapter',
-            'cover_image',
+        $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string|max:255',
+        'price' => 'required|string|max:255',
+        'rating' => 'required|string|max:255',
+        'genre' => 'nullable|array', 
+        'readers_love' => 'nullable|array', 
+        'sample_chapter' => 'required|string', 
+        'cover_image' => 'nullable|string|max:255',
         ]);
 
-        $book = $this->bookService->updateBook($id, $data);
+        $book = $this->bookService->updateBook($id, $validatedData);
         return response()->json(['message' => 'Book updated successfully', 'book' => $book]);
     }
 
