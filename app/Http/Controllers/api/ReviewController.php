@@ -32,7 +32,6 @@ class ReviewController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
-        // Create a new review
         $review = Review::create($request->all());
 
         return response()->json([
