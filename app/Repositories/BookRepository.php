@@ -9,7 +9,7 @@ class BookRepository implements BookRepositoryInterface
 {
     public function getAllBooks()
     {
-        return Book::all();
+        return Book::paginate(10);
     }
 
     public function getBookById($id)

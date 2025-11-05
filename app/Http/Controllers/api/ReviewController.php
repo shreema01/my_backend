@@ -57,7 +57,7 @@ class ReviewController extends Controller
         ], 200);
     }
     
-//  Update a specific review.
+    //  Update a specific review.
      
     public function update(Request $request, $id)
     {

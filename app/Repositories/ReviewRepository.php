@@ -9,7 +9,7 @@ class ReviewRepository implements ReviewRepositoryInterface
 {
     public function getAllReviews()
     {
-        return Review::all();
+        return Review::paginate(10);
     }
 
     public function getReviewById($id)

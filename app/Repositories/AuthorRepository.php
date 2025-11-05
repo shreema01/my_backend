@@ -9,7 +9,7 @@ class AuthorRepository implements AuthorRepositoryInterface
 {
     public function getAllAuthors()
     {
-        return Author::all();
+        return Author::paginate(10);
     }
 
     public function getAuthorById($id)
@@ -26,12 +26,14 @@ class AuthorRepository implements AuthorRepositoryInterface
     {
         $author = Author::findOrFail($id);
         $author->update($data);
+
         return $author;
     }
 
     public function deleteAuthor($id)
     {
         $author = Author::findOrFail($id);
+
         return $author->delete();
     }
 }
