@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description'); 
-            $table->string('price'); 
-            $table->string('rating'); 
+            $table->string('price');
+            $table->string('rating');
             $table->json('genre');
             $table->json('readers_love');
             $table->text('sample chapter');

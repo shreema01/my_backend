@@ -10,7 +10,6 @@ class Author extends Model
     use HasFactory;
 
     protected $table = 'authors';
-
     protected $fillable = [
         'title',
         'description',
@@ -27,7 +26,7 @@ class Author extends Model
         'social_links' => 'array',
     ];
 
-     protected $attributes = [
+    protected $attributes = [
         'writing_philosophy' => [],
         'award_and_recognition' => [],
         'social_links' => [],
