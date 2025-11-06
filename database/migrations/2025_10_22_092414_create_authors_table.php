@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->text('story');
-            $table->json('writing_philosophy')->nullable();
-            $table->json('award_and_recognition')->nullable();
-            $table->json('social_links')->nullable();
+            $table->json('writing_philosophy');
+            $table->json('award_and_recognition');
+            $table->json('social_links');
             $table->string('cover_image')->nullable();
             $table->timestamps();
         });

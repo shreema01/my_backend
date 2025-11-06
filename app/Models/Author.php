@@ -26,4 +26,11 @@ class Author extends Model
         'award_and_recognition' => 'array',
         'social_links' => 'array',
     ];
+
+     protected $attributes = [
+        'writing_philosophy' => [],
+        'award_and_recognition' => [],
+        'social_links' => [],
+    ];
+
 }

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('description'); 
             $table->string('price'); 
             $table->string('rating'); 
-            $table->json('genre')->nullable();
-            $table->json('readers_love')->nullable();
+            $table->json('genre');
+            $table->json('readers_love');
             $table->text('sample chapter');
             $table->string('cover_image')->nullable();
             $table->timestamps();
