@@ -1,15 +1,17 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthenticationController;
 use App\Http\Controllers\AboutController;
+use PharIo\Manifest\AuthorCollection;
 
 // Public routes
 Route::post('register', [AuthenticationController::class, 'register']);
 Route::post('login', [AuthenticationController::class, 'login']);
-Route::get('/about', [AuthenticationController::class, 'index']);
+Route::get('about', [AuthenticationController::class, 'index']);
 
 
 // Protected routes
@@ -20,5 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('books', BookController::class);
 
     Route::apiResource('reviews', ReviewController::class);
+
+    Route::apiResource('authors', AuthorController::class);
 
 });
