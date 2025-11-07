@@ -21,7 +21,6 @@ class ReviewController extends Controller
 
   
     //  Store a newly created review in the database.
- 
     public function store(Request $request)
     {
         // Validate incoming request
