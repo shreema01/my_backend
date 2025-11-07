@@ -8,6 +8,7 @@ use App\Http\Controllers\API\AuthenticationController;
 use App\Http\Controllers\AboutController;
 use PharIo\Manifest\AuthorCollection;
 
+
 Route::post('register', [AuthenticationController::class, 'register']);
 Route::post('login', [AuthenticationController::class, 'login']);
 Route::get('about', [AuthenticationController::class, 'index']);
