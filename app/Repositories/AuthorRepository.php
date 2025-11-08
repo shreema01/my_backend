@@ -7,6 +7,8 @@ use App\Repositories\Interfaces\AuthorRepositoryInterface;
 
 class AuthorRepository implements AuthorRepositoryInterface
 {
+
+
     public function getAllAuthors()
     {
         return Author::paginate(10);
