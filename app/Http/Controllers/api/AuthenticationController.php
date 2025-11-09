@@ -108,7 +108,7 @@ class AuthenticationController extends Controller
     public function userInfo()
     {
         try {
-             $users = User::latest()->first();
+            $users = User::latest()->get();
 
             return response()->json([
                 'response_code'  => 200,
