@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Repositories\Interfaces;
+namespace App\Interfaces;
+
 
 interface AuthorRepositoryInterface
 {

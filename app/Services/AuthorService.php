@@ -2,13 +2,14 @@
 
 namespace App\Services;
 
-use App\Repositories\Interfaces\AuthorRepositoryInterface;
+use App\Interfaces\AuthorRepositoryInterface;
 
+use App\Repositories\AuthorRepository;
 class AuthorService
 {
     protected $authorRepository;
 
-    public function __construct(AuthorRepositoryInterface $authorRepository)
+    public function __construct(AuthorRepository $authorRepository)
     {
         $this->authorRepository = $authorRepository;
     }

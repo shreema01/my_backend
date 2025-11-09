@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\BookController;
-use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\API\BookController;
+use App\Http\Controllers\API\ReviewController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthenticationController;
+use App\Http\Controllers\API\AuthorController;
 use App\Http\Controllers\AboutController;
 use PharIo\Manifest\AuthorCollection;
 

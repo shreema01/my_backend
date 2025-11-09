@@ -3,12 +3,10 @@
 namespace App\Repositories;
 
 use App\Models\Author;
-use App\Repositories\Interfaces\AuthorRepositoryInterface;
+use App\Interfaces\AuthorRepositoryInterface;
 
 class AuthorRepository implements AuthorRepositoryInterface
 {
-
-
     public function getAllAuthors()
     {
         return Author::paginate(10);

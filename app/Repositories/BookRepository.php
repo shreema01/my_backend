@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 use App\Models\Book;
-use App\Repositories\Interfaces\BookRepositoryInterface;
+use App\Interfaces\BookRepositoryInterface;
 
 class BookRepository implements BookRepositoryInterface
 {

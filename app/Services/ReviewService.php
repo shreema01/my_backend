@@ -3,12 +3,13 @@
 namespace App\Services;
 
 use App\Interfaces\ReviewRepositoryInterface;
+use App\Repositories\ReviewRepository;
 
 class ReviewService
 {
     protected $reviewRepository;
 
-    public function __construct(ReviewRepositoryInterface $reviewRepository)
+    public function __construct(ReviewRepository $reviewRepository)
     {
         $this->reviewRepository = $reviewRepository;
     }

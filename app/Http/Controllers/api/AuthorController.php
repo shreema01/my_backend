@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\API;
+use App\Http\Controllers\Controller;
 use App\Services\AuthorService;
 use Illuminate\Http\Request;
+
+
 class AuthorController extends Controller
 {
     protected $authorService;
@@ -25,6 +27,7 @@ class AuthorController extends Controller
         return response()->json($author);
     }
 
+// ..................................
   public function store(Request $request)
   {
   
@@ -35,7 +38,7 @@ class AuthorController extends Controller
         'writing_philosophy' => 'nullable|array', 
         'award_and_recognition' => 'nullable|array', 
         'social_links' => 'nullable|array',
-        'cover_image' => 'nullable|string|max:255', 
+        'cover_image' => 'nullable|image', 
     ]);
 
 
@@ -48,16 +51,17 @@ class AuthorController extends Controller
 }
 
 
+
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-        'title' => 'required|string|max:255',
-        'description' => 'required|string|max:255',
-        'story' => 'required|string',
-        'writing_philosophy' => 'nullable|array', 
-        'award_and_recognition' => 'nullable|array', 
-        'social_links' => 'nullable|array',
-        'cover_image' => 'nullable|string|max:255', 
+        'title'                 => 'required|string|max:255',
+        'description'           => 'required|string|max:255',
+        'story'                 => 'required|string',
+        'writing_philosophy'    => 'nullable|array',
+        'award_and_recognition' => 'nullable|array',
+        'social_links'          => 'nullable|array',
+        'cover_image'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         $author = $this->authorService->updateAuthor($id, $validatedData);

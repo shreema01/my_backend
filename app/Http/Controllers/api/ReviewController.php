@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
+use App\Http\Controllers\Controller;
 
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -25,8 +26,8 @@ class ReviewController extends Controller
     {
         // Validate incoming request
         $request->validate([
-            'book_id' => 'required|exists:books,id',
-            'rating' => 'required|string|max:5',
+            'book_id' => 'required|string',
+            'rating' => 'required|string',
             'description' => 'required|string',
             'name' => 'required|string|max:255',
         ]);
