@@ -6,7 +6,6 @@ use App\Repositories\Interfaces\BookRepositoryInterface;
 
 class BookService
 {
-    
     protected $bookRepository;
 
     public function __construct(BookRepositoryInterface $bookRepository)
