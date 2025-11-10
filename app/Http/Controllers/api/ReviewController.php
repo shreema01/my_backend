@@ -41,8 +41,7 @@ class ReviewController extends Controller
         ], 201);
     }
 
-    
-      // Display a specific review.
+    // Display a specific review.
    
     public function show($id)
     {
