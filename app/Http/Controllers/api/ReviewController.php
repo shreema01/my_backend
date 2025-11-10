@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
-    //  Display all reviews.
+    //  Display all reviews. 
      
     public function index()
     {
@@ -25,6 +25,7 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         // Validate incoming request
+        
         $request->validate([
             'book_id' => 'required|string',
             'rating' => 'required|string',

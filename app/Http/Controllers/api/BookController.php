@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBookRequest;
 use App\Services\BookService;
-use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
@@ -29,18 +29,10 @@ class BookController extends Controller
         return response()->json($book);
     }
 
-    public function store(Request $request)
+    public function store(StoreBookRequest $request)
     {
-        $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'price' => 'required|string|max:255',
-            'rating' => 'required|string|max:255',
-            'genre' => 'nullable|array',
-            'readers_love' => 'nullable|array',
-            'sample_chapter' => 'required|string',
-            'cover_image' => 'nullable|image',
-        ]);
+        
+        $validatedData = $request->validated();
 
         $book = $this->bookService->addBook($validatedData);
 
@@ -50,22 +42,16 @@ class BookController extends Controller
         ], 201);
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreBookRequest $request, $id)
     {
-        $validatedData = $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string|max:255',
-            'price' => 'required|string|max:255',
-            'rating' => 'required|string|max:255',
-            'genre' => 'nullable|array',
-            'readers_love' => 'nullable|array',
-            'sample_chapter' => 'required|string',
-            'cover_image' => 'nullable|image',
+        $validatedData = $request->validated();
+
+        $book = $this->bookService->UpdateBook($id, $validatedData);
+
+        return response()->json([
+            'message' => 'Book updated successfully',
+            'book' => $book,
         ]);
-
-        $book = $this->bookService->updateBook($id, $validatedData);
-
-        return response()->json(['message' => 'Book updated successfully', 'book' => $book]);
     }
 
     public function destroy($id)

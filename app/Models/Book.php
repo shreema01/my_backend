@@ -22,13 +22,12 @@ class Book extends Model
     ];
 
     protected $casts = [
-        'genre' => 'array',
-        'readers_love' => 'array',
+        
     ];
 
     protected $attributes = [
-        'genre' => [],
-        'readers_love' => [],
+        'genre' => "[]",
+        'readers_love' => "[]",
     ];
 }
 

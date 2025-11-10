@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Interfaces\ReviewRepositoryInterface;
 use App\Repositories\ReviewRepository;
 
 class ReviewService

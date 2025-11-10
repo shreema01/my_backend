@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('rating');
             $table->json('genre');
             $table->json('readers_love');
-            $table->text('sample chapter');
+            $table->string('sample_chapter');
             $table->string('cover_image')->nullable();
             $table->timestamps();
         });

@@ -2,8 +2,6 @@
 
 namespace App\Services;
 
-use App\Interfaces\AuthorRepositoryInterface;
-
 use App\Repositories\AuthorRepository;
 class AuthorService
 {
