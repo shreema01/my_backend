@@ -25,7 +25,7 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         // Validate incoming request
-        
+
         $request->validate([
             'book_id' => 'required|string',
             'rating' => 'required|string',
