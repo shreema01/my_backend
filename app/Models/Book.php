@@ -23,7 +23,7 @@ class Book extends Model
         'cover_image',
     ];
 
-    protected $casts = [
+     protected $casts = [
         
     ];
 
