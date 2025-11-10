@@ -17,8 +17,9 @@ class Review extends Model
         'name',
     ];
 
-    // public function book()
-    // {
-    //     return $this->belongsTo(Book::class);
-    // }
+    
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
+    }
 }
