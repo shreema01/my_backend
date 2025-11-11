@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
 
-
 class AuthenticationController extends Controller
 {
    // Register a new account.
