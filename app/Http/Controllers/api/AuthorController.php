@@ -39,7 +39,6 @@ class AuthorController extends Controller
             'author' => $author
         ], 201);
     }
-
     public function update(StoreAuthorRequest $request, $id)
     {
         $validatedData = $request->validated();
