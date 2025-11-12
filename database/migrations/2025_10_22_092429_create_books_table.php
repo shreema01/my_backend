@@ -15,6 +15,7 @@ return new class extends Migration
        
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->boolean('literary_works')->default(false);
             $table->string('title');
             $table->string('description'); 
             $table->string('price');
