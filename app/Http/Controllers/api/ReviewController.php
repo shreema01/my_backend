@@ -9,7 +9,6 @@ use App\Services\ReviewService;
 class ReviewController extends Controller
 {
     protected $reviewService;
-
     public function __construct(ReviewService $reviewService)
     {
         $this->reviewService = $reviewService;
