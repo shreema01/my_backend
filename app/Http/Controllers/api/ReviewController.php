@@ -1,54 +1,100 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
 use App\Http\Controllers\Controller;
+use App\Models\Review;
 use Illuminate\Http\Request;
-use App\Services\ReviewService;
+use App\Http\Requests\StoreBookRequest;
+use App\Services\BookService;
+
 
 class ReviewController extends Controller
 {
-    protected $reviewService;
-    public function __construct(ReviewService $reviewService)
-    {
-        $this->reviewService = $reviewService;
-    }
-
+    //  Display all reviews. 
+     
     public function index()
     {
-        return response()->json($this->reviewService->getAllReviews());
+        $reviews = Review::with('book')->get();
+
+        return response()->json([
+            'message' => 'All reviews fetched successfully.',
+            'data' => $reviews,
+        ], 200);
     }
 
+    //  Store a newly created review in the database.
+    
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'book_id' => 'required|integer',
-            'rating' => 'required|integer|min:1|max:5',
+        // Validate incoming request
+
+        $request->validate([
+            'book_id' => 'required|string',
+            'rating' => 'required|string',
             'description' => 'required|string',
             'name' => 'required|string|max:255',
         ]);
 
-        return response()->json($this->reviewService->createReview($validated), 201);
+        $review = Review::create($request->all());
+
+        return response()->json([
+            'message' => 'Review created successfully!',
+            'data' => $review,
+        ], 201);
     }
 
+    // Display a specific review.
+   
     public function show($id)
     {
-        return response()->json($this->reviewService->getReview($id));
-    }
+        $review = Review::with('book')->find($id);
 
+        if (!$review) {
+            return response()->json(['message' => 'Review not found.'], 404);
+        }
+
+        return response()->json([
+            'message' => 'Review details fetched successfully.',
+            'data' => $review,
+        ], 200);
+    }
+    
+    //  Update a specific review.
+     
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
-            'rating' => 'sometimes|integer|min:1|max:5',
+        $review = Review::find($id);
+
+        if (!$review) {
+            return response()->json(['message' => 'Review not found.'], 404);
+        }
+
+        $request->validate([
+            'rating' => 'sometimes|string|max:5',
             'description' => 'sometimes|string',
             'name' => 'sometimes|string|max:255',
         ]);
 
-        return response()->json($this->reviewService->updateReview($id, $validated));
+        $review->update($request->all());
+
+        return response()->json([
+            'message' => 'Review updated successfully!',
+            'data' => $review,
+        ], 200);
     }
 
+    //  Delete a specific review.
+    
     public function destroy($id)
     {
-        return response()->json($this->reviewService->deleteReview($id));
+        $review = Review::find($id);
+
+        if (!$review) {
+            return response()->json(['message' => 'Review not found.'], 404);
+        }
+
+        $review->delete();
+
+        return response()->json(['message' => 'Review deleted successfully.'], 200);
     }
 }
