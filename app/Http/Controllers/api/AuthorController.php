@@ -36,9 +36,10 @@ class AuthorController extends Controller
 
         return response()->json([
             'message' => 'Author created successfully',
-            'author' => $author
+            'author' => $author,
         ], 201);
     }
+
     public function update(StoreAuthorRequest $request, $id)
     {
         $validatedData = $request->validated();
