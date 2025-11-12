@@ -12,7 +12,6 @@ class BookController extends Controller
 {
     protected $bookService;
 
-
     public function __construct(BookService $bookService)
     {
         $this->bookService = $bookService;
