@@ -28,6 +28,7 @@ class StoreReviewRequest extends FormRequest
     {
         
         return [
+            
             'book_id.required' => 'Book_id field is required.',
             'rating.required' => 'Rating field is required.', 
             'description.required' => 'Description is required.',
