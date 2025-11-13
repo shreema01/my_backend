@@ -16,19 +16,28 @@ class AuthorFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-             
-            // 'title' => $this->faker->sentence(3),
-            // 'description' => $this->faker->sentence(10),
-            // 'story' => $this->faker->paragraph(4),
-            // 'writing_philosophy' => [$this->faker->word(), $this->faker->word()],
-            // 'award_and_recognition' => [$this->faker->sentence(3), $this->faker->sentence(2)],
-            // 'social_links' => [
-            //     'facebook' => $this->faker->url(),
-            //     'twitter' => $this->faker->url(),
-            // ],
-            // 'cover_image' => null,
-       
+         return [
+            'title' => fake()->name(),
+            'description' => fake()->paragraph(3),
+            'story' => fake()->text(300),
+
+            'writing_philosophy' => [
+                fake()->sentence(),
+                fake()->sentence(),
+            ],
+
+            'award_and_recognition' => [
+                fake()->word(),
+                fake()->word(),
+            ],
+
+            'social_links' => [
+                'facebook' => fake()->url(),
+                'twitter' => fake()->url(),
+                'instagram' => fake()->url(),
+            ],
+
+            'cover_image' => fake()->imageUrl(640, 480, 'people', true, 'Author'),
         ];
     }
 }

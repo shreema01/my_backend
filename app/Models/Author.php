@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +10,7 @@ class Author extends Model
     use HasFactory;
 
     protected $table = 'authors';
+
     protected $fillable = [
         'title',
         'description',
@@ -22,12 +22,14 @@ class Author extends Model
     ];
 
     protected $casts = [
+        'writing_philosophy' => 'array',
+        'award_and_recognition' => 'array',
+        'social_links' => 'array',
     ];
 
     protected $attributes = [
-        'writing_philosophy' => "[]",
-        'award_and_recognition' => "[]",
-        'social_links' => "[]",
+        'writing_philosophy' => '[]',
+        'award_and_recognition' => '[]',
+        'social_links' => '[]',
     ];
-
 }
