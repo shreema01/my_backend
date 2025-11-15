@@ -17,6 +17,7 @@ class ReviewRepository implements ReviewRepositoryInterface
         return Review::findOrFail($id);
     }
 
+    
     public function createReview(array $data)
     {
         return Review::create($data);
