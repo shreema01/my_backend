@@ -11,6 +11,7 @@ class BookRepository implements BookRepositoryInterface
         return Book::paginate(10);
     }
 
+    
     public function getBookById($id)
     {
         return Book::findOrFail($id);
