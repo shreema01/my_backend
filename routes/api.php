@@ -13,7 +13,6 @@ Route::post('login', [AuthenticationController::class, 'login']);
 Route::get('about', [AuthenticationController::class, 'index']);
 
 Route::apiResource('books', BookController::class);
-
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('get-user', [AuthenticationController::class, 'userInfo']);
     Route::post('logout', [AuthenticationController::class, 'logOut']);
