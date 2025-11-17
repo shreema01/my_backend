@@ -21,7 +21,6 @@ Route::middleware('auth:sanctum')->group(function () {
     
 
     Route::apiResource('reviews', ReviewController::class);
-
     Route::apiResource('authors', AuthorController::class);
 
 });
