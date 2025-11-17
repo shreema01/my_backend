@@ -17,7 +17,6 @@ class ReviewFactory extends Factory
      */
     public function definition(): array
     {
-        
         return [
             'book_id' => Book::inRandomOrder()->first()?->id,
             'rating' => fake()->randomFloat(1, 1, 5),
