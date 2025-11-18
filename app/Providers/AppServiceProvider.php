@@ -19,7 +19,6 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // Author
-         
         $this->app->bind(AuthorRepositoryInterface::class, AuthorRepository::class);
          
         // Book
@@ -27,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
         
         // Review
          $this->app->bind(ReviewRepositoryInterface::class, ReviewRepository::class);
-
 
     }
 
