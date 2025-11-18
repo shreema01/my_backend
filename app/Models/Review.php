@@ -12,6 +12,7 @@ class Review extends Model
     protected $table = 'reviews';
     
     protected $fillable = [
+   
         'book_id',
         'rating',
         'description',
