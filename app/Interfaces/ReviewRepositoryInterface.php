@@ -3,6 +3,7 @@
 namespace App\Interfaces;
 interface ReviewRepositoryInterface
 {
+    
     public function getAllReviews();
     public function getReviewById($id);
     public function createReview(array $data);
