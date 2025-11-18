@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreBookRequest;
 use App\Services\BookService;
 
-
 class ReviewController extends Controller
 {
     //  Display all reviews. 
