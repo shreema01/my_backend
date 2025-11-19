@@ -12,15 +12,16 @@ Route::post('register', [AuthenticationController::class, 'register']);
 Route::post('login', [AuthenticationController::class, 'login']);
 Route::get('about', [AuthenticationController::class, 'index']);
 
-
+// book,author and review route
 Route::apiResource('books', BookController::class);
+
+Route::apiResource('reviews', ReviewController::class);
+    
+Route::apiResource('authors', AuthorController::class);
+
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('get-user', [AuthenticationController::class, 'userInfo']);
     Route::post('logout', [AuthenticationController::class, 'logOut']);
-
-    
-
-    Route::apiResource('reviews', ReviewController::class);
-    Route::apiResource('authors', AuthorController::class);
 
 });
