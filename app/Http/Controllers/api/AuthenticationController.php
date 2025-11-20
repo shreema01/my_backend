@@ -12,6 +12,7 @@ use App\Models\User;
 
 class AuthenticationController extends Controller
 {
+    
    // Register a new account.
     public function register(Request $request)
     {
@@ -102,7 +103,7 @@ class AuthenticationController extends Controller
         }
     }
 
-    //  Get list of users (paginated) — protected route.
+    //  Get list of users — protected route.
   
     public function userInfo()
     {
@@ -126,7 +127,7 @@ class AuthenticationController extends Controller
         }
     }
 
-    //  Logout user and revoke tokens — protected route.
+    //  Logout users — protected route.
      
     public function logOut(Request $request)
     {

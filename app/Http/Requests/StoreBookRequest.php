@@ -37,6 +37,7 @@ class StoreBookRequest extends FormRequest
             'price.required' => 'Price field is required.',
             'rating.required' => 'Rating field is required.', 
             'sample_chapter.required' =>'Sample_chapter field is required.',
+            'cover_image.required' =>'cover_image field is required.',
         ];
     }
 }

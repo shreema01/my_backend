@@ -36,7 +36,6 @@ class AuthorFactory extends Factory
                 'twitter' => fake()->url(),
                 'instagram' => fake()->url(),
             ],
-
             
             'cover_image' => fake()->imageUrl(640, 480, 'people', true, 'Author'),
         ];

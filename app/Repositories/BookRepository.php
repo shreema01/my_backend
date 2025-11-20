@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Interfaces\BookRepositoryInterface;
 use App\Models\Book;
-use Storage;
 
 class BookRepository implements BookRepositoryInterface
 {
