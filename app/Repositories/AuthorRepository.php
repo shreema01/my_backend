@@ -5,9 +5,6 @@ namespace App\Repositories;
 use App\Models\Author;
 use App\Interfaces\AuthorRepositoryInterface;
 
-
-
-
 class AuthorRepository implements AuthorRepositoryInterface
 {
     public function getAllAuthors()
@@ -22,6 +19,12 @@ class AuthorRepository implements AuthorRepositoryInterface
 
     public function createAuthor(array $data)
     {
+        if (isset($data['cover_image']) ) {
+            $fileName = time() . '.' . $data['cover_image']->getClientOriginalExtension();
+            $path = $data['cover_image']->storeAs('authors', $fileName, 'public');
+            $data['cover_image'] = $path;
+        }
+
         return Author::create($data);
     }
 

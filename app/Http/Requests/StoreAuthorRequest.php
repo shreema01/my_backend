@@ -22,7 +22,7 @@ class StoreAuthorRequest extends FormRequest
             'writing_philosophy'    => 'nullable|array',
             'award_and_recognition' => 'nullable|array',
             'social_links'          => 'nullable|array',
-            'cover_image'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'cover_image'           => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
         ];
     }
 
