@@ -29,7 +29,6 @@ class ReviewService
         return $this->reviewRepository->createReview($data);
         
     }
-
     public function update($id, array $data)
     {
         return $this->reviewRepository->updateReview($id, $data);
