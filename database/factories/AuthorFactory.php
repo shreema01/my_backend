@@ -31,12 +31,14 @@ class AuthorFactory extends Factory
                 fake()->word(),
             ],
 
+            
             'social_links' => [
                 'facebook' => fake()->url(),
                 'twitter' => fake()->url(),
                 'instagram' => fake()->url(),
             ],
             
+
             'cover_image' => fake()->imageUrl(640, 480, 'people', true, 'Author'),
         ];
     }
