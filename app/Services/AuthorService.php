@@ -18,6 +18,7 @@ class AuthorService
 
     public function getAuthorDetails($id)
     {
+        
         return $this->authorRepository->getAuthorById($id);
     }
     public function addAuthor(array $data)
