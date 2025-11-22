@@ -24,8 +24,6 @@ class AppServiceProvider extends ServiceProvider
         // Book
          $this->app->bind(BookRepositoryInterface::class, BookRepository::class);
         
-        // Review
-         $this->app->bind(ReviewRepositoryInterface::class, ReviewRepository::class);
 
     }
 

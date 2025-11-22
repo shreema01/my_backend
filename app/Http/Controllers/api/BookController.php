@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBookRequest;
 use App\Services\BookService;
 
-
 class BookController extends Controller
 {
     protected $bookService;
