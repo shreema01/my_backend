@@ -8,7 +8,7 @@ use App\Http\Controllers\API\AuthorController;
 Route::post('register', [AuthenticationController::class, 'register']);
 Route::post('login', [AuthenticationController::class, 'login']);
 
-// book,author and review route
+// book,author route
 Route::apiResource('books', BookController::class);
     
 Route::apiResource('authors', AuthorController::class);
