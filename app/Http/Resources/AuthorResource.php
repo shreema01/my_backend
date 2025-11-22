@@ -13,29 +13,20 @@ class AuthorResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id'                     => $this->id,
-            'title'                  => $this->title,
-            'description'            => $this->description,
-            'story'                  => $this->story,
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'story' => $this->story,
+            'writing_philosophy' => $this->writing_philosophy ?? [],
+            'award_and_recognition' => $this->award_and_recognition ?? [],
+            'social_links' => $this->social_links ?? [],
 
-            // array fields (auto casted)
-            'writing_philosophy'     => $this->writing_philosophy ?? [],
-            'award_and_recognition'  => $this->award_and_recognition ?? [],
-            'social_links'           => $this->social_links ?? [],
-
-            // Full image URL
-            // 'cover_image' => $this->cover_image
-            //     ? url('/uploads/authors/' . $this->cover_image)
-            //     : null,
-
-               'cover_image' => $this->cover_image
-    ? env('NEXT_PUBLIC_LARAVEL_HOST') . '/uploads/authors/' . $this->cover_image
+            'cover_image' => $this->cover_image
+    ? env('NEXT_PUBLIC_LARAVEL_HOST').'/uploads/authors/'.$this->cover_image
     : null,
-
-
-            // readable timestamps
-            'created_at'             => $this->created_at?->format('Y-m-d H:i:s'),
-            'updated_at'             => $this->updated_at?->format('Y-m-d H:i:s'),
+    
+            'created_at' => $this->created_at?->format('Y-m-d H:i:s'),
+            'updated_at' => $this->updated_at?->format('Y-m-d H:i:s'),
         ];
     }
 }
