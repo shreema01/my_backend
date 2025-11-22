@@ -6,9 +6,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Interfaces\AuthorRepositoryInterface;
 use App\Repositories\AuthorRepository;
-use App\Repositories\ReviewRepository;
 use App\Interfaces\BookRepositoryInterface;
-use App\Interfaces\ReviewRepositoryInterface;
 use App\Repositories\BookRepository;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,8 +20,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(AuthorRepositoryInterface::class, AuthorRepository::class);
          
         // Book
-         $this->app->bind(BookRepositoryInterface::class, BookRepository::class);
-        
+         $this->app->bind(BookRepositoryInterface::class, BookRepository::class);    
 
     }
 
