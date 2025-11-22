@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Interfaces\BookRepositoryInterface;
 use App\Models\Book;
-
 class BookRepository implements BookRepositoryInterface
 {
     public function getAllBooks()
