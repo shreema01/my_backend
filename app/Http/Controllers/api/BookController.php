@@ -14,7 +14,6 @@ class BookController extends Controller
     // }
     public function __construct(private readonly BookService $bookService) {}
 
-
     public function index()
     {
         // $books = $this->bookService->getAllBooks();
