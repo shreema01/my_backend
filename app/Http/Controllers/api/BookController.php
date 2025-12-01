@@ -5,20 +5,25 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBookRequest;
 use App\Services\BookService;
-
 class BookController extends Controller
 {
-    protected $bookService;
-    public function __construct(BookService $bookService)
-    {
-        $this->bookService = $bookService;
-    }
+    // protected $bookService;
+    // public function __construct(BookService $bookService)
+    // {
+    //     $this->bookService = $bookService;
+    // }
+
+    public function __construct(private readonly BookService $bookService) {}
+
 
     public function index()
     {
-        $books = $this->bookService->getAllBooks();
+        // $books = $this->bookService->getAllBooks();
 
-        return response()->json($books);
+        // return response()->json($books);
+
+        return response()->json($this->bookService->getAllBooks());
+
     }
 
     public function show($id)
@@ -31,10 +36,11 @@ class BookController extends Controller
 
     public function store(StoreBookRequest $request)
     {
-        
-        $validatedData = $request->validated();
+        $book = $this->bookService->addBook($request->validated());
 
-        $book = $this->bookService->addBook($validatedData);
+        // $validatedData = $request->validated();
+
+        // $book = $this->bookService->addBook($validatedData);
 
         return response()->json([
             'message' => 'Book created successfully',
