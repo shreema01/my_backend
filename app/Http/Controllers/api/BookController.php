@@ -24,6 +24,7 @@ class BookController extends Controller
 
     public function show($id)
     {
+        
         $book = $this->bookService->getBookDetails($id);
 
         return response()->json($book);
