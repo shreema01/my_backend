@@ -26,6 +26,7 @@ class Book extends Model
         'readers_love' => 'array',  
     ];
 
+    
     protected $attributes = [
         'genre' => "[]",
         'readers_love' => "[]",
