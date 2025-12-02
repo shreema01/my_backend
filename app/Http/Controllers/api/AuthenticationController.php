@@ -13,7 +13,8 @@ use App\Models\User;
 class AuthenticationController extends Controller
 {
     
-   // Register a new account.
+   
+    // Register a new account.
     public function register(Request $request)
     {
         try {
