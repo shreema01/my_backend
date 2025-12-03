@@ -22,7 +22,6 @@ class AuthorResource extends JsonResource
             'writing_philosophy' => $this->writing_philosophy ?? [],
             'award_and_recognition' => $this->award_and_recognition ?? [],
             'social_links' => $this->social_links ?? [],
-
             'cover_image' => $this->cover_image
     ? env('NEXT_PUBLIC_LARAVEL_HOST').'/uploads/authors/'.$this->cover_image
     : null,
