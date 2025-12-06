@@ -3,7 +3,6 @@
 namespace App\Interfaces;
 interface AuthorRepositoryInterface
 {
-    
     public function getAllAuthors();
     public function getAuthorById($id);
     public function createAuthor(array $data);
