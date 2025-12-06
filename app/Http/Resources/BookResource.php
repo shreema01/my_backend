@@ -21,9 +21,7 @@ class BookResource extends JsonResource
             'rating' => $this->rating,
             'genre' => $this->genre ?? [],
             'readers_love' => $this->readers_love ?? [],
-
             'sample_chapter' => $this->sample_chapter,
-
             'cover_image' => $this->cover_image
     ? env('NEXT_PUBLIC_LARAVEL_HOST').'/uploads/books/'.$this->cover_image
     : null,
