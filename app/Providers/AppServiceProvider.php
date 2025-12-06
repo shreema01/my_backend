@@ -24,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
          $this->app->bind(BookRepositoryInterface::class, BookRepository::class);    
 
     }
-
     /**
      * Bootstrap any application services.
      */
