@@ -2,6 +2,7 @@
 
 namespace App\Interfaces;
 interface BookRepositoryInterface
+
 {
     public function getAllBooks();
     public function getBookById($id);
