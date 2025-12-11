@@ -9,4 +9,5 @@ interface BookRepositoryInterface
     public function createBook(array $data);
     public function updateBook($id, array $data);
     public function deleteBook($id);
+    
 }
