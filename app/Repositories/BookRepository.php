@@ -7,11 +7,13 @@ use App\Models\Book;
 class BookRepository implements BookRepositoryInterface
 {
     public function getAllBooks()
+    
     {
         return Book::paginate(10);
     }
 
     public function getBookById($id)
+    
     {
         return Book::findOrFail($id);
     }
