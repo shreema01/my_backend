@@ -27,7 +27,8 @@ class BookResource extends JsonResource
     ? env('NEXT_PUBLIC_LARAVEL_HOST').'/uploads/books/'.$this->cover_image
     : null,
 
-            'created_at' => $this->created_at?->format('Y-m-d H:i:s'),
+            
+    'created_at' => $this->created_at?->format('Y-m-d H:i:s'),
             'updated_at' => $this->updated_at?->format('Y-m-d H:i:s'),
         ];
     }
