@@ -49,6 +49,7 @@ class AuthorController extends Controller
            
             'message' => 'Author updated successfully',
             'author' => $author,
+            
         ]);
     }
 
