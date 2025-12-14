@@ -46,6 +46,7 @@ class AuthorController extends Controller
         $author = $this->authorService->updateAuthor($id, $validatedData);
 
         return response()->json([
+           
             'message' => 'Author updated successfully',
             'author' => $author,
         ]);
