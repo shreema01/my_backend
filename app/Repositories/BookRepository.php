@@ -30,6 +30,7 @@ class BookRepository implements BookRepositoryInterface
         return Book::create($data);
     }
 
+    
     public function updateBook($id, array $data)
     {
         $book = Book::findOrFail($id);
