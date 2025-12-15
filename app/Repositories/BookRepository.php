@@ -43,6 +43,7 @@ class BookRepository implements BookRepositoryInterface
             $data['cover_image'] = 'uploads/books/'.$imageName;
         }
 
+       
         $book->update($data);
 
         return $book;
