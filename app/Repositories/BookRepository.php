@@ -36,6 +36,7 @@ class BookRepository implements BookRepositoryInterface
         $book = Book::findOrFail($id);
         if (isset($data['cover_image']) && $data['cover_image'] instanceof \Illuminate\Http\UploadedFile) {
 
+           
             $imageName = time().'.'.$data['cover_image']->getClientOriginalExtension();
             $data['cover_image']->move(public_path('public/uploads/books'), $imageName);
 
