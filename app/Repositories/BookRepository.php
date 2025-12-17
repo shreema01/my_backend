@@ -33,6 +33,7 @@ class BookRepository implements BookRepositoryInterface
     public function updateBook($id, array $data)
     {
         
+       
         $book = Book::findOrFail($id);
         if (isset($data['cover_image']) && $data['cover_image'] instanceof \Illuminate\Http\UploadedFile) {
 
