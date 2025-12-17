@@ -8,6 +8,7 @@ class BookService
     protected $bookRepository;
     public function __construct(BookRepository $bookRepository)
     {
+      
         $this->bookRepository = $bookRepository;
     }
 
