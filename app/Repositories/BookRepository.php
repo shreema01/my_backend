@@ -22,10 +22,11 @@ class BookRepository implements BookRepositoryInterface
     {
         
         if (isset($data['cover_image']) ) {
-            
+
             $fileName = time() . '.' . $data['cover_image']->getClientOriginalExtension();
             $path = $data['cover_image']->storeAs('books', $fileName, 'public');
             $data['cover_image'] = $path;
+            
         }
 
         
