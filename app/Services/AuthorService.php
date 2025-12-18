@@ -3,6 +3,7 @@
 namespace App\Services;
 use App\Repositories\AuthorRepository;
 class AuthorService
+
 {
     protected $authorRepository;
 
