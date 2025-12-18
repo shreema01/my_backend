@@ -40,7 +40,6 @@ class AuthorRepository implements AuthorRepositoryInterface
     {
         
         $author = Author::findOrFail($id);
-
         return $author->delete();
         
     }
