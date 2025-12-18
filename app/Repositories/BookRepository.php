@@ -27,6 +27,7 @@ class BookRepository implements BookRepositoryInterface
             $data['cover_image'] = $path;
         }
 
+        
         return Book::create($data);
     }
 
