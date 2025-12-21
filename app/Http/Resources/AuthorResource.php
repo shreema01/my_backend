@@ -9,6 +9,7 @@ class AuthorResource extends JsonResource
     /**
      * Transform the resource into an array.
      */
+    
     public function toArray(Request $request): array
     {
        
