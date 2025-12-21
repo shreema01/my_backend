@@ -20,7 +20,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(AuthorRepositoryInterface::class, AuthorRepository::class);
          
         // Book
-         $this->app->bind(BookRepositoryInterface::class, BookRepository::class);    
+         
+        $this->app->bind(BookRepositoryInterface::class, BookRepository::class);    
 
     }
     /**
