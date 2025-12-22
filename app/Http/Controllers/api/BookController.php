@@ -32,8 +32,7 @@ class BookController extends Controller
 
     public function store(StoreBookRequest $request)
     {
-       
-        $book = $this->bookService->addBook($request->validated());
+       $book = $this->bookService->addBook($request->validated());
 
         // $validatedData = $request->validated();
 
