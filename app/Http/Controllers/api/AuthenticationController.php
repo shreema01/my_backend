@@ -18,6 +18,7 @@ class AuthenticationController extends Controller
     public function register(Request $request)
     {
         try {
+            
             $validated = $request->validate([
                 'name'     => 'required|string|min:4',
                 'email'    => 'required|string|email|max:255|unique:users',
