@@ -42,6 +42,7 @@ class BookController extends Controller
             'message' => 'Book created successfully',
             'book' => $book,
         ], 201);
+        
     }
 
     public function update(StoreBookRequest $request, $id)
