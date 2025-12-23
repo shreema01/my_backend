@@ -17,6 +17,7 @@ class AuthenticationController extends Controller
     // Register a new account.
     public function register(Request $request)
     {
+        
         try {
             
             $validated = $request->validate([
