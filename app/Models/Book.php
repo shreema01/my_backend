@@ -19,8 +19,6 @@ class Book extends Model
         'sample_chapter',
         'cover_image',
     ];
-
-     
     protected $casts = [
         'genre' => 'array',
         'readers_love' => 'array',  
