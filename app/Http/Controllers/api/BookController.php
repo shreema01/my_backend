@@ -55,6 +55,7 @@ class BookController extends Controller
             'message' => 'Book updated successfully',
             'book' => $book,
         ]);
+        
     }
 
     public function destroy($id)

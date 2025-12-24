@@ -34,5 +34,6 @@ class StoreAuthorRequest extends FormRequest
             'story.required' => 'Story field is required.',
             'cover_image.required' =>'cover_image field is required.',
         ];
+        
     }
 }
