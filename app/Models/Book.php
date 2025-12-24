@@ -21,6 +21,7 @@ class Book extends Model
     ];
     
     protected $casts = [
+        
         'genre' => 'array',
         'readers_love' => 'array',  
     ];
