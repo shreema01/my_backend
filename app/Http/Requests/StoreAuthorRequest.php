@@ -32,6 +32,7 @@ class StoreAuthorRequest extends FormRequest
     { 
        
     return [
+            
             'title.required' => 'Title field is required.',
             'description.required' => 'Description is required.',
             'story.required' => 'Story field is required.',
