@@ -24,6 +24,7 @@ class StoreAuthorRequest extends FormRequest
             'award_and_recognition' => 'nullable|array',
             'social_links'          => 'nullable|array',
             'cover_image'           => 'nullable|file|mimes:jpg,jpeg,png|max:2048',
+            
         ];
     }
 
