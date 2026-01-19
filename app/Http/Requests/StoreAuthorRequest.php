@@ -15,7 +15,8 @@ class StoreAuthorRequest extends FormRequest
     public function rules(): array
     {
         
-        return [
+        
+    return [
             'title'                 => 'required|string|max:255',
             'description'           => 'required|string|max:255',
             'story'                 => 'required|string',
