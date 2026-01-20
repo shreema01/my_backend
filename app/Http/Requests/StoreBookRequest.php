@@ -25,6 +25,7 @@ class StoreBookRequest extends FormRequest
             'readers_love' => 'nullable|array',
             'sample_chapter' => 'required|string',
             'cover_image' => 'required|file|mimes:jpg,jpeg,png|max:2048',
+            
         ];
     }
 
