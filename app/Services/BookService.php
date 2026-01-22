@@ -29,7 +29,6 @@ class BookService
     {
         return $this->bookRepository->updateBook($id, $data);
     }
-
     public function deleteBook($id)
     {
         
