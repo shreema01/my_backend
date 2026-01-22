@@ -14,7 +14,6 @@ class BookService
     
     public function getAllBooks()
     {
-        
         return $this->bookRepository->getAllBooks();
     }
     public function getBookDetails($id)
