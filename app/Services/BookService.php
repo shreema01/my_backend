@@ -25,7 +25,6 @@ class BookService
     {
        return $this->bookRepository->createBook($data);
     }
-
     public function updateBook($id, array $data)
     {
         return $this->bookRepository->updateBook($id, $data);
