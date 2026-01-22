@@ -23,9 +23,7 @@ class BookService
 
     public function addBook(array $data)
     {
-       
        return $this->bookRepository->createBook($data);
-       
     }
 
     public function updateBook($id, array $data)
