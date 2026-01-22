@@ -9,6 +9,7 @@ class BookService
     
     public function __construct(BookRepository $bookRepository)
     {
+        
         $this->bookRepository = $bookRepository;
     }
     
