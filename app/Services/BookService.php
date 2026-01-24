@@ -27,11 +27,13 @@ class BookService
     }
     public function updateBook($id, array $data)
     {
-        return $this->bookRepository->updateBook($id, $data);
+        
+       return $this->bookRepository->updateBook($id, $data);
     }
 
+
     public function deleteBook($id)
-    
+
     {
 
         return $this->bookRepository->deleteBook($id);
