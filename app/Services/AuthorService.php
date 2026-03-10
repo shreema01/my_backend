@@ -26,7 +26,8 @@ class AuthorService
     
     public function addAuthor(array $data)
     {
-        return $this->authorRepository->createAuthor($data);
+       
+       return $this->authorRepository->createAuthor($data);
     }
 
     public function updateAuthor($id, array $data)
