@@ -6,6 +6,5 @@ interface AuthorRepositoryInterface
     public function getAuthorById($id);
     public function createAuthor(array $data);
     public function updateAuthor($id, array $data);
-   
     public function deleteAuthor($id);    
 }
