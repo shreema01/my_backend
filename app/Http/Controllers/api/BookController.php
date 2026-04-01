@@ -47,6 +47,7 @@ class BookController extends Controller
 
     public function update(StoreBookRequest $request, $id)
     {
+       
         $validatedData = $request->validated();
 
         $book = $this->bookService->UpdateBook($id, $validatedData);
