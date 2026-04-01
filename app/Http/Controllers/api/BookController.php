@@ -52,6 +52,7 @@ class BookController extends Controller
 
         $book = $this->bookService->UpdateBook($id, $validatedData);
 
+        
         return response()->json([
             'message' => 'Book updated successfully',
             'book' => $book,
