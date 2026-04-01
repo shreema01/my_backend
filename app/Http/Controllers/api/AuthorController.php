@@ -8,6 +8,7 @@ use App\Services\AuthorService;
 
 class AuthorController extends Controller
 {
+    
     protected $authorService;
 
     public function __construct(AuthorService $authorService)
