@@ -22,6 +22,7 @@ class BookController extends Controller
         // $books = $this->bookService->getAllBooks();
 
         // return response()->json($books);
+        
         return response()->json($this->bookService->getAllBooks());
     }
 
