@@ -32,6 +32,7 @@ class BookController extends Controller
         $book = $this->bookService->getBookDetails($id);
 
         return response()->json($book);
+        
     }
 
     public function store(StoreBookRequest $request)
