@@ -13,7 +13,9 @@ class AuthorController extends Controller
 
     public function __construct(AuthorService $authorService)
     {
-        $this->authorService = $authorService;
+        
+       $this->authorService = $authorService;
+       
     }
 
     public function index()
