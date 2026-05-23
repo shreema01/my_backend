@@ -29,7 +29,6 @@ class AuthorController extends Controller
     public function show($id)
     {
         $author = $this->authorService->getAuthorDetails($id);
-
         return response()->json($author);
     }
 
