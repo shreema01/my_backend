@@ -20,6 +20,7 @@ class AuthorController extends Controller
 
     public function index()
     {
+        
         $authors = $this->authorService->getAllAuthors();
 
         return response()->json($authors);
