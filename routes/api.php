@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AuthenticationController;
 use App\Http\Controllers\API\AuthorController;
 
 Route::post('register', [AuthenticationController::class, 'register']);
+
 Route::post('login', [AuthenticationController::class, 'login']);
 
 // book,author route
