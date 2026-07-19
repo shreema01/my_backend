@@ -35,6 +35,7 @@ class BookFactory extends Factory
 
             'sample_chapter' => fake()->text(300),
             'cover_image' => fake()->imageUrl(640, 480, 'books', true, 'Book'),
+            
         ];
     }
 }
