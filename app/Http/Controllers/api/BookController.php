@@ -63,6 +63,7 @@ class BookController extends Controller
             
             'message' => 'Book updated successfully',
             'book' => $book,
+            
         ]);
         
     }
