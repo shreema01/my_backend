@@ -21,11 +21,13 @@ class AuthenticationController extends Controller
         try {
             
             $validated = $request->validate([
-                
+
                 'name'     => 'required|string|min:4',
                 'email'    => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:8',
+                
             ]);
+
 
             $user = User::create([
                 'name'     => $validated['name'],
